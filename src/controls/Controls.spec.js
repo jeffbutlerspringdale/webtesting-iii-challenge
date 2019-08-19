@@ -3,7 +3,7 @@
 import React from 'react'
 
 import renderer from 'react-test-renderer';
-import render from 'react-test-library';
+import { render, fireEvent } from '@testing-library/react'
 import Controls from './Controls';
 
 describe('<Controls />', () => {
@@ -12,7 +12,9 @@ describe('<Controls />', () => {
 
     expect(tree).toMatchSnapshot();
   });
-  it('displays defaults as unlocked and closed', () => {
-      const tree = render(<Controls />);
-  })
+    it('button should lock when clicked', () => {
+    const { getByText } = render(<Controls locked={ true } closed={ false }/>);
+    expect(getByText(/lock gate/i));
+    expect(getByText(/close gate/i));
+  });
 });
