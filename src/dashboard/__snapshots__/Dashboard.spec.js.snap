@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Dashboard /> should match snapshot 1`] = `
+exports[`<Dashboard /> matches snapshot 1`] = `
 Array [
   <div
     className="display panel"
